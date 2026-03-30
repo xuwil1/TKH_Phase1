@@ -1,0 +1,13 @@
+--- Task 1: SUBNET REMEDIATION ---
+default via 192.168.10.1 dev enp0s3 
+192.168.10.0/24 dev enp0s3 proto kernel scope link src 192.168.10.150 
+192.168.10.193 dev lo scope link 
+
+--- TASK 2: DNS REMEDIATION ---
+Malicious /etc/hosts entry for secure.titancorp.com removed.
+grep titancorp returned no result - local poisoning cleared.
+
+--- TASK 3: TCP 3-WAY HANDSHAKE EVIDENCE ---
+02:00:49.052374 lo    In  IP 192.168.10.150.42384 > 192.168.10.193.80: Flags [S], seq 375631795, win 65495, options [mss 65495,sackOK,TS val 4287756072 ecr 0,nop,wscale 7], length 0
+02:00:49.052383 lo    In  IP 192.168.10.193.80 > 192.168.10.150.42384: Flags [S.], seq 1695169802, ack 375631796, win 65483, options [mss 65495,sackOK,TS val 3488621528 ecr 4287756072,nop,wscale 7], length 0
+02:00:49.052390 lo    In  IP 192.168.10.150.42384 > 192.168.10.193.80: Flags [.], ack 1, win 512, options [nop,nop,TS val 4287756072 ecr 3488621528], length 0

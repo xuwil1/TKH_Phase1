@@ -10,6 +10,6 @@ echo "[*] Initiating Container Deployment..."
 # name it "training-web", and map port 8080 on the host to port 80 on the container.
 # YOUR COMMAND HERE:
 
-docker run -d --name training-web -p 8080:80 nginx
+docker run -d --name training-web -p 8081:80 nginx
 
 echo "[+] Deployment command executed."

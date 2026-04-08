@@ -1,0 +1,8 @@
+{
+    "operator": "WX",
+    "host_ip": "192.168.56.101",
+    "vm_sandbox_ip": "192.168.56.1",
+    "web_container_id": "30d46e322eb3",
+    "isolation_test": "PASSED",
+    "persistence_verified": true
+}

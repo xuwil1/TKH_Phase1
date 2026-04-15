@@ -1,0 +1,15 @@
+==================================================
+SESSION 16: READINESS INVENTORY
+==================================================
+Operator: Willie
+Date: 04/14/2026
+
+Confidence Audit (Yes/No):
+1. Nmap (Network Scanning): [Yes]
+2. Docker (Containerization): [Yes]
+3. Linux Hardening (UFW/chmod): [Yes]
+4. VS Code Remote-SSH: [Yes]
+
+Identify your weakest area and your plan to review it:
+==================================================
+[Linux Hardening. I plan to review the modules and look through the NotebookLM. I plan to repeat the labs after I feel more comfortable with the material]

@@ -1,6 +1,7 @@
 # TARGET THREAT PROFILE: CloudNano 
 **Classification:** Passive Security Audit
-**Operator:** ## 1. Subdomain Discovery 
+**Operator:** Willie 
+## 1. Subdomain Discovery 
 * **Tool Used:** Sublist3r
 * **Subdomains Found:** * [www.affirm.com] 
   * [businesshub.affirm.com] 

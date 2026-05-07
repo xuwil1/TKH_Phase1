@@ -1,0 +1,19 @@
+==================================================
+SESSION 25: SQL INJECTION EXFILTRATION REPORT
+==================================================
+
+1. AUTHENTICATION BYPASS
+* Tautology Payload Used: [' OR 1=1 --]
+
+2. DATABASE MAPPING (UNION ATTACK)
+* Number of Columns Discovered: [2]
+* Table Name Discovered: [1.employees 2. users]
+
+3. DATA EXFILTRATION
+* CEO Salary Extracted: [$2,500,000]
+* Final UNION Payload Used: [' UNION SELECT name, salary FROM employees --]
+
+4. REMEDIATION
+* What is the primary defense against this attack?
+Answer: [Parameterized Queries force the database to distinguish between the SQL command and the user input. 
+        The application treats user input as literal data so it will never be executed as code.]

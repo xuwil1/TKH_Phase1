@@ -1,0 +1,20 @@
+==================================================
+SESSION 27: API SECURITY AUDIT LOG
+==================================================
+
+1. BOLA (ID SWAP) EXPLOITATION
+* Targeted User ID: [101 and 102]
+* Private Information Leaked: [TITAN_MASTER_KEY_2026]
+
+2. BUSINESS LOGIC EXPLOITATION (DISCOUNT HUNTER)
+* Hidden Discount Code Discovered: [9912]
+* Method Used: [I ran a code to loop through the possible codes and had it break when it found discount=100% off]
+
+3. REMEDIATION RECOMMENDATION
+* How would you fix the BOLA vulnerability?
+Answer: 
+    The vulnerability could be fixed by implementing object-level authorization. The server has to check the user's session token with the requested ID. 
+    Instead of using sequential integer IDs, random strings can be used so attackers can't guess their way into the database. 
+* How would you fix the Brute-Force vulnerability in the discount field?
+Answer: 
+    I would limit the amount of attempts before limiting access to submitting codes. I would also change from using integer codes to alphanumberic codes.

@@ -1,0 +1,5 @@
+Timestamp,Source IP,Event Type,Action,Description
+[Apr 30, 2026 @ 06:18:00.000],[198.51.100.44],[Failed Login],Initial Access,[Authentication failed for user: admin
+_id odG6I54B6IliBDVsBqAE]
+[Apr 30, 2026 @ 06:25:00.000],[10.0.5.15],[Windows Security],Lateral Movement,[Event ID 4624: Successful Logon. User escalated to Domain Admin]
+[Apr 30, 2026 @ 06:45:00.000],[10.0.5.15],[Firewall],Exfiltration,[Outbound traffic anomalous volume: 4.5 GB transferred over port 443]

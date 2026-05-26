@@ -1,0 +1,6 @@
+--- DNS Audit ---
+Google Actual IP : 127.0.0.53
+
+--- Service Audit ---
+Cloaked Service Port: 8080
+Server Header: nginx/1.24.0 (Ubuntu)

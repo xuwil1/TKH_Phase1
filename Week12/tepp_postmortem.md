@@ -1,7 +1,7 @@
 # Phase 1 Final Reckoning — TEPP Post-Mortem
-**Operator:** [Willie Xu]
-**Date:** May 28, 2026
-**Repository:** [Your GitHub repo URL]
+**Operator:** [Willie Xu]  
+**Date:** May 28, 2026  
+**Repository:** [https://github.com/xuwil1/TKH_Phase1/tree/main]  
 **TKH Innovation Fellowship 2026 | Phase 1 | Cybersecurity**
 
 ---
@@ -14,13 +14,13 @@ A network sweep of 172.100.0.0/24 subnet successfully identified three live targ
 An initial host discovery sweep utilizing Nmap ping scans was executed across the entire 172.80.0.0/24 network segment. The scan results indicated that the only active node was 172.80.0.1. Consequently, this network was triaged as inactive. The lack of external perimeter vulnerabilities in this subnet informs the Phase 2 approach by focusing all lateral movement and credential-cracking analysis on the assets compromised within the active 172.100.0.x hosts.
 ### Exploitation Network — 172.60.0.0/24  
 Nmap ping scans was conducted on the 172.60.0.0/24 subnet to enumerate live targets. Similar to the breach network, host discovery confirmed that zero external target servers were active within this subnet. Similiar to the breach network, because no live hosts or open network sockets were exposed on this segment, all efforts were focused on the exposed active 172.100.0.x hosts.  
+
 ---
 
 ## Phase 1: Rapid Triage
 
 ### Server 1 — 172.100.0.11  
 **Vulnerability Identified:**  
-[What was exposed and how did you confirm it?]
 The target host is running an unauthenticated Redis key-value store (version 8.6.2) bound to all network interfaces on port 6379. This was confirmed by using Nmap to scan target 172.100.0.11.
 **Remediation Commands:**  
 sudo docker exec -it broken_server_1 sh
@@ -44,8 +44,7 @@ pkill vsftpd
 sudo docker rm broken_server_2  
 **Before State:**  
 A rogue instance of vsftpd 3.0.2 application layer was actively running inside the broken_server_2 container and exposing ports 20 and 21 to the local network architecture.  
-**After State:**
-[What was the state after termination?]
+**After State:**  
 After termination, a scan report utilizing Nmap was run on target host 172.100.0.12 resulting in zero active hosts in the server.
 **Analysis:**  
 An enterprise network environment containing a rogue FTP service exposes the organization to severe risks such as the protocol transimitting all session authentication handles and raw payloads over the internet in cleartext format. Malicious attackers can easily harvest administrative credentials using basic packet-sniffing utilities to exfiltrate data. The presence of rogue software compromises compliance frameworks and establishes unmonitored backdoors that bypass centralized access controls.  
@@ -62,6 +61,7 @@ Prior to remediation, the web application deployment root directory /var/www/htm
 After adjusting html, the web root folder was sucessfully locked down to standard baseline security settings('755'). Public the execution of the chmod adjustment, the web root folder was successfully locked down to standard baseline security settings ('755'). The owner can read, write, and run. Meanwhile everyone else is restricted to reading and executing only.  
 **Analysis:**  
 Leaving deployment or web root paths world-writable ('777') introduces severe systemic risk by opening direct pathways for local privilege escalation and persistent code injection. If an attacker leverages a vulnerability in a separate application to gain a low-privileged foothold on the asset, they can exploit this permission leak to plant web shells or modify operational binaries. Restricting filesystem nodes using strict directory baseline controls enforces the Principle of Least Privilege and preserves environment integrity.
+
 ---
 
 ## Phase 2: The Breach
